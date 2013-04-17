@@ -17,6 +17,7 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'snipmate-snippets'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Syntastic'
+Bundle 'airblade/vim-gitgutter'
 
 " GLOBAL
 colorscheme molokai
