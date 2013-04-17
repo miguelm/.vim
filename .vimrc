@@ -86,10 +86,10 @@ set number
 "vnoremap p "+p
 
 " Function to Access Grep
-function! MyGrep(...)
+function! mgrep(...)
   if a:0 < 2
-    echo "Usage: MyGrep <options> <pattern> <dir>"
-    echo 'Example: MyGrep -r "cow" ~/Desktop/*'
+    echo "Usage: mgrep <options> <pattern> <dir>"
+    echo 'Example: mgrep -r "cow" ~/Desktop/*'
     return
   endif
   if a:0 == 2
@@ -128,7 +128,7 @@ function! MyGrep(...)
 
   call delete(tmpfile)
 endfunction
-command! -nargs=* -complete=file MyGrep call MyGrep(<f-args>)
+command! -nargs=* -complete=file mgrep call mgrep(<f-args>)
 
 """ FocusMode
 function! ToggleFocusMode()
