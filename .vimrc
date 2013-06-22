@@ -85,6 +85,10 @@ set number
 "nnoremap p "+p
 "vnoremap p "+p
 
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+
+
 " Function to Access Grep
 function! Mgrep(...)
   if a:0 < 2
