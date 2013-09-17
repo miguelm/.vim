@@ -77,6 +77,10 @@ set hls
 " Option de numeros nas linhas para retirar set nonumber
 set number
 
+" UltiSnips directory
+let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+
 " Teste de remap
 " nnoremap <esc> :noh<return><esc>
 
