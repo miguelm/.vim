@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-rails'
-Bundle 'Markdown'
+" Bundle 'Markdown'
 " Bundle 'snipMate'
 Bundle 'UltiSnips'
 " Bundle 'vim-powerline'
