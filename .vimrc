@@ -12,7 +12,7 @@ Bundle 'Markdown'
 " Bundle 'snipMate'
 Bundle 'UltiSnips'
 " Bundle 'vim-powerline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'ZenCoding.vim'
 Bundle 'snipmate-snippets'
 " Bundle 'Valloric/YouCompleteMe'
@@ -20,6 +20,7 @@ Bundle 'Syntastic'
 Bundle 'airblade/vim-gitgutter'
 " Bundle 'vim-easymotion'
 Bundle 'ervandew/supertab'
+Bundle 'mattn/emmet-vim'
 
 " GLOBAL
 colorscheme molokai
@@ -78,6 +79,13 @@ set hls
 
 " Option de numeros nas linhas para retirar set nonumber
 set number
+
+" UltiSnips directory
+let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+" let g:UltiSnipsExpandTrigger="<c-tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Teste de remap
 " nnoremap <esc> :noh<return><esc>
@@ -156,6 +164,12 @@ function! ToggleFocusMode()
 endfunc
 nnoremap <F12> :call ToggleFocusMode()<cr>
 
+" SML make code {{{
+"autocmd FileType sml setlocal makeprg=rlwrap\ sml\ -P\ full\ '%'
+autocmd FileType sml setlocal makeprg=sml\ '%'
+autocmd BufWritePost *.sml :make
+" }}}
+
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -169,3 +183,4 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
