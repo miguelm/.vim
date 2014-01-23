@@ -10,11 +10,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'Markdown'
 " Bundle 'snipMate'
+" Bundle 'snipmate-snippets'
 Bundle 'UltiSnips'
 " Bundle 'vim-powerline'
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'ZenCoding.vim'
-Bundle 'snipmate-snippets'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'Syntastic'
 Bundle 'airblade/vim-gitgutter'
