@@ -9,7 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-rails'
 Bundle 'Markdown'
-" Bundle 'snipMate' 
+" Bundle 'snipMate'
 Bundle 'UltiSnips'
 " Bundle 'vim-powerline'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -18,6 +18,7 @@ Bundle 'snipmate-snippets'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Syntastic'
 Bundle 'airblade/vim-gitgutter'
+" Bundle 'vim-easymotion'
 
 " GLOBAL
 colorscheme molokai
