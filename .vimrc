@@ -15,10 +15,11 @@ Bundle 'UltiSnips'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'ZenCoding.vim'
 Bundle 'snipmate-snippets'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'Syntastic'
 Bundle 'airblade/vim-gitgutter'
 " Bundle 'vim-easymotion'
+Bundle 'ervandew/supertab'
 
 " GLOBAL
 colorscheme molokai
