@@ -98,7 +98,7 @@ set number
 
 " UltiSnips directory
 let g:UltiSnipsSnippetsDir = '~/.vim/snippers/'
-"let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+let g:UltiSnipsSnippetDirectories = ['snippers','snippers/legacy/']
 " let g:UltiSnipsExpandTrigger="<c-tab>"
 " let g:UltiSnipsJumpForwardTrigger="<c-tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
