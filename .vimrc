@@ -23,9 +23,25 @@ Bundle 'ervandew/supertab'
 Bundle 'mattn/emmet-vim'
 
 " GLOBAL
-colorscheme molokai
-set guifont=Monaco\ for\ Powerline
-"set guifont=Menlo+Regular+for+Powerline:h8:cDEFAULT
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " osx stuff
+    colorscheme solarized
+    set guifont=Inconsolata\ for\ Powerline:h15
+    let g:Powerline_symbols = 'fancy'
+    set t_Co=256
+    set fillchars+=stl:\ ,stlnc:\
+    set term=xterm-256color
+    set termencoding=utf-8
+  else
+    "arch stuff
+    colorscheme molokai
+
+    set guifont=Monaco\ for\ Powerline
+    "set guifont=Menlo+Regular+for+Powerline:h8:cDEFAULT
+  endif
+endif
 
 syntax on
 filetype plugin indent on
@@ -81,8 +97,8 @@ set hls
 set number
 
 " UltiSnips directory
-let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
-let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+let g:UltiSnipsSnippetsDir = '~/.vim/snippers/'
+"let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 " let g:UltiSnipsExpandTrigger="<c-tab>"
 " let g:UltiSnipsJumpForwardTrigger="<c-tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -98,6 +114,28 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " osx stuff
+    map <c-s> <c-x><CR>
+
+    if &term =~ "xterm.*"
+        let &t_ti = &t_ti . "\e[?2004h"
+        let &t_te = "\e[?2004l" . &t_te
+        function XTermPasteBegin(ret)
+            set pastetoggle=<Esc>[201~
+            set paste
+            return a:ret
+        endfunction
+        map <expr> <Esc>[200~ XTermPasteBegin("i")
+        imap <expr> <Esc>[200~ XTermPasteBegin("")
+        cmap <Esc>[200~ <nop>
+        cmap <Esc>[201~ <nop>
+    endif
+
+  endif
+endif
 
 " Function to Access Grep
 function! Mgrep(...)
