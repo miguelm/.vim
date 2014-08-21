@@ -120,6 +120,8 @@ if has("unix")
     " osx stuff
     map <c-s> <c-x><CR>
 
+    set backspace=indent,eol,start
+
     if &term =~ "xterm.*"
         let &t_ti = &t_ti . "\e[?2004h"
         let &t_te = "\e[?2004l" . &t_te
