@@ -1,26 +1,28 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
 
-" My Bundles here :
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-rails'
-Bundle 'Markdown'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Markdown'
+Plugin 'UltiSnips'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+" Bundle 'tpope/vim-rails'
 " Bundle 'snipMate'
 " Bundle 'snipmate-snippets'
-Bundle 'UltiSnips'
 " Bundle 'vim-powerline'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " Bundle 'ZenCoding.vim'
 " Bundle 'Valloric/YouCompleteMe'
-Bundle 'Syntastic'
-Bundle 'airblade/vim-gitgutter'
 " Bundle 'vim-easymotion'
-Bundle 'ervandew/supertab'
-Bundle 'mattn/emmet-vim'
+call vundle#end()
 
 " GLOBAL
 if has("unix")
@@ -96,20 +98,15 @@ set hls
 " Option de numeros nas linhas para retirar set nonumber
 set number
 
-" UltiSnips directory
+" UltiSnips
 let g:UltiSnipsSnippetsDir = '~/.vim/snippers/'
 let g:UltiSnipsSnippetDirectories = ['snippers','snippers/legacy/']
-" let g:UltiSnipsExpandTrigger="<c-tab>"
-" let g:UltiSnipsJumpForwardTrigger="<c-tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" Emmet
+let g:user_emmet_leader_key='<Tab>'
 
 " Teste de remap
 " nnoremap <esc> :noh<return><esc>
-
-" nnoremap y "+y
-" vnoremap y "+y
-"nnoremap p "+p
-"vnoremap p "+p
 
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
@@ -204,12 +201,6 @@ function! ToggleFocusMode()
 endfunc
 nnoremap <F12> :call ToggleFocusMode()<cr>
 
-" SML make code {{{
-"autocmd FileType sml setlocal makeprg=rlwrap\ sml\ -P\ full\ '%'
-autocmd FileType sml setlocal makeprg=sml\ '%'
-autocmd BufWritePost *.sml :make
-" }}}
-
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -223,4 +214,3 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
