@@ -2,6 +2,9 @@
 
 Portable vim configuration
 
+# essentials
+- silver searcher: https://robots.thoughtbot.com/faster-grepping-in-vim
+
 ## Install
 ```
 git clone git://github.com/miguelm/.vim ~/.vim
