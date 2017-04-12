@@ -11,11 +11,16 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Markdown'
 Plugin 'UltiSnips'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'Syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
-Plugin 'mattn/emmet-vim'
+Plugin 'yssl/QFEnter'
+" Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'w0rp/ale'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'mhinz/vim-startify'
+" Plugin 'Syntastic'
 " Bundle 'tpope/vim-rails'
 " Bundle 'snipMate'
 " Bundle 'snipmate-snippets'
@@ -155,6 +160,11 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind Control+ S (backward slash) to grep shortcut
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap <C-S> :Ag<SPACE>
+
+let g:qfenter_keymap = {}
+let g:qfenter_keymap.vopen = ['<C-v>']
+let g:qfenter_keymap.hopen = ['<C-CR>', '<C-s>', '<C-x>']
+let g:qfenter_keymap.topen = ['<C-t>']
 
 " Function to Access Grep
 function! Mgrep(...)
